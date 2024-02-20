@@ -24,3 +24,19 @@ function twoSum(numbers, target) {
     }
   }
 }
+
+function twoSum2(nums, target) {
+  const myObjt = {};
+  for (let i = 0; i < nums.length; i++) {
+    let num = nums[i];
+    let diff = String(target - num);
+    if (myObjt[diff] !== undefined) {
+      return [myObjt[diff], i];
+    } else {
+      myObjt[num.toString()] = i;
+    }
+  }
+  return undefined;
+}
+
+console.log(twoSum2([1, 2, 3], 4));
